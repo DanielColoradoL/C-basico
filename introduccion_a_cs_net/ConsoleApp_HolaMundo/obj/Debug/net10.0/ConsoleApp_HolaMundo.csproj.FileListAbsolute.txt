@@ -1,0 +1,15 @@
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\bin\Debug\net10.0\ConsoleApp_HolaMundo.exe
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\bin\Debug\net10.0\ConsoleApp_HolaMundo.deps.json
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\bin\Debug\net10.0\ConsoleApp_HolaMundo.runtimeconfig.json
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\bin\Debug\net10.0\ConsoleApp_HolaMundo.dll
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\bin\Debug\net10.0\ConsoleApp_HolaMundo.pdb
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ConsoleApp_HolaMundo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ConsoleApp_HolaMundo.AssemblyInfoInputs.cache
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ConsoleApp_HolaMundo.AssemblyInfo.cs
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ConsoleApp_HolaMundo.csproj.CoreCompileInputs.cache
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ConsoleApp_HolaMundo.dll
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\refint\ConsoleApp_HolaMundo.dll
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ConsoleApp_HolaMundo.pdb
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ConsoleApp_HolaMundo.genruntimeconfig.cache
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ref\ConsoleApp_HolaMundo.dll
+C:\Users\danic\source\repos\introduccion_a_cs_net\ConsoleApp_HolaMundo\obj\Debug\net10.0\ConsoleA.19D08F29.Up2Date

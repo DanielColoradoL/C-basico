@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Ej01_BienvenidaBilletera/Ej01_BienvenidaBilletera.csproj" />
+  <Project Path="Ej02_FichaDeCuenta/Ej02_FichaDeCuenta.csproj" />
+  <Project Path="Ej03_TiposDeDatosCuenta/Ej03_TiposDeDatosCuenta.csproj" />
+  <Project Path="Ej04_CalculoTransferencia/Ej04_CalculoTransferencia.csproj" Id="d4e8bf1a-c206-40d6-942a-e27248077eb7" />
+  <Project Path="Ej05_ValidacionTransferencia/Ej05_ValidacionTransferencia.csproj" Id="e77c2309-12ab-4ea1-ac13-6418f516451b" />
+  <Project Path="Ej06_DepuracionBilletera/Ej06_DepuracionBilletera.csproj" Id="6e0666c1-e6f4-4a49-8474-15224ea4a28d" />
+  <Project Path="Ej07_BilleteraIntegrador/Ej07_BilleteraIntegrador.csproj" Id="15b258ee-0411-4af9-bb51-4e21ea93b343" />
+  <Project Path="M1_BilleteraVirtual/M1_BilleteraVirtual.csproj" />
+</Solution>

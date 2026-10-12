@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\danic\\source\\repos\\introduccion_a_cs_net\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA1247AD-689E-47CB-ABFD-2AC68CAFACE3}|ConsoleApp_HolaMundo\\ConsoleApp_HolaMundo.csproj|c:\\users\\danic\\source\\repos\\introduccion_a_cs_net\\consoleapp_holamundo\\desafio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA1247AD-689E-47CB-ABFD-2AC68CAFACE3}|ConsoleApp_HolaMundo\\ConsoleApp_HolaMundo.csproj|solutionrelative:consoleapp_holamundo\\desafio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Desafio.cs",
+              "DocumentMoniker": "C:\\Users\\danic\\source\\repos\\introduccion_a_cs_net\\ConsoleApp_HolaMundo\\Desafio.cs",
+              "RelativeDocumentMoniker": "ConsoleApp_HolaMundo\\Desafio.cs",
+              "ToolTip": "C:\\Users\\danic\\source\\repos\\introduccion_a_cs_net\\ConsoleApp_HolaMundo\\Desafio.cs",
+              "RelativeToolTip": "ConsoleApp_HolaMundo\\Desafio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T19:42:43.212Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

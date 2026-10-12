@@ -1,0 +1,15 @@
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\bin\Debug\net10.0\Examen.exe
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\bin\Debug\net10.0\Examen.deps.json
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\bin\Debug\net10.0\Examen.runtimeconfig.json
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\bin\Debug\net10.0\Examen.dll
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\bin\Debug\net10.0\Examen.pdb
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\Examen.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\Examen.AssemblyInfoInputs.cache
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\Examen.AssemblyInfo.cs
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\Examen.csproj.CoreCompileInputs.cache
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\Examen.dll
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\refint\Examen.dll
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\Examen.pdb
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\Examen.genruntimeconfig.cache
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\ref\Examen.dll
+C:\Users\danic\source\repos\introduccion_a_cs_net\Examen\obj\Debug\net10.0\Examen.csproj.Up2Date
