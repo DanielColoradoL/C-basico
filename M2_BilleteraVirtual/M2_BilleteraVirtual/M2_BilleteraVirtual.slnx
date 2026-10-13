@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Ej01_CargaDeDinero/Ej01_CargaDeDinero.csproj" Id="9fc1c65d-99e2-4b98-9095-0feee3c3995e" />
   <Project Path="Ej02_ExtraccionDeEfectivo/Ej02_ExtraccionDeEfectivo.csproj" Id="d17c29e4-7e47-4c04-b6fd-e069783a9ace" />
+  <Project Path="Ej03_TransferenciaValidada/Ej03_TransferenciaValidada.csproj" Id="35555136-e8ab-4508-be5b-3dc2dec32f39" />
 </Solution>
