@@ -5,4 +5,5 @@
   <Project Path="Ej04_TarifasEscalonadas/Ej04_TarifasEscalonadas.csproj" Id="4894f74d-4166-423e-9f46-da27e5015943" />
   <Project Path="Ej05_MenuYDestinatarios/Ej05_MenuYDestinatarios.csproj" Id="ec7fd405-c1fa-48f5-b1fc-276fceec4a91" />
   <Project Path="Ej06_ReintentosYProyeccion/Ej06_ReintentosYProyeccion.csproj" Id="0ef6fcf7-fb9b-4ce6-9c90-d35ca34ea54a" />
+  <Project Path="Ej07_DepuracionFlujo/Ej07_DepuracionFlujo.csproj" Id="88ce2467-7c27-4e6e-84bc-627c15363023" />
 </Solution>
