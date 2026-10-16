@@ -3,4 +3,5 @@
   <Project Path="Ej02_ExtraccionDeEfectivo/Ej02_ExtraccionDeEfectivo.csproj" Id="d17c29e4-7e47-4c04-b6fd-e069783a9ace" />
   <Project Path="Ej03_TransferenciaValidada/Ej03_TransferenciaValidada.csproj" Id="35555136-e8ab-4508-be5b-3dc2dec32f39" />
   <Project Path="Ej04_TarifasEscalonadas/Ej04_TarifasEscalonadas.csproj" Id="4894f74d-4166-423e-9f46-da27e5015943" />
+  <Project Path="Ej05_MenuYDestinatarios/Ej05_MenuYDestinatarios.csproj" Id="ec7fd405-c1fa-48f5-b1fc-276fceec4a91" />
 </Solution>
