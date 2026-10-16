@@ -54,6 +54,7 @@
                 //Ciclo para validar que el monto sea valido
                 while (!(monto > 0m && monto <= limiteCargaOperacion))
                 {
+                    Console.Write("Monto a cargar (mayor que 0 y hasta $ 5.000,00): ");
                     monto = decimal.TryParse(Console.ReadLine(), out decimal leido) ? leido : 0m;
                     if (monto <= 0 || monto > limiteCargaOperacion)
                     {
