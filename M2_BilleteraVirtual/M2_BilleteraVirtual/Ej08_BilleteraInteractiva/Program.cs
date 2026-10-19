@@ -24,11 +24,12 @@
             decimal totalExtraidoHoy = 0;
             decimal totalComisiones = 0;
             DateTime fechaSesion = new DateTime(2026, 10, 03);
-            DateTime? ultimoMovimiento;
+            DateTime? ultimoMovimiento = null;
             int intentos = 0;
             bool aprobado = false;
             int selectorMenu = 0;
             string descripcionDestino = "";
+            decimal totalTransferir = 0;
 
             Console.WriteLine("=== BILLETERA VIRTUAL - Banco NetSur ===");
             Console.WriteLine("Titular: " + titular);
@@ -37,7 +38,7 @@
             while (intentos < maximoIntentosClave && !aprobado)
             {
                 Console.Write("Ingrese su clave: ");
-                string lecturaClave = Console.ReadLine();
+                string? lecturaClave = Console.ReadLine();
                 if (lecturaClave == claveCorrecta)
                 {
                     aprobado = true;
@@ -49,7 +50,7 @@
                 }
                 intentos++;
             }
-            if (aprobado) 
+            if (aprobado)
             {
 
                 //While para permanecer en el menu
@@ -87,12 +88,14 @@
                             {
                                 Console.WriteLine("Estado: RECHAZADO");
                                 Console.WriteLine("El monto debe ser mayor que cero. No se realizó la carga.");
+                                cantidadRechazos++;
                             }
                             // Si es numero pero mayor que monto de carga elevada
                             else if (monto >= limiteCargaOperacion)
                             {
                                 Console.WriteLine("Estado: RECHAZADO");
                                 Console.WriteLine("Carga de monto elevado. Será informada al área de control.");
+                                cantidadRechazos++;
                             }
                             // Si es numero valido para cargar
                             else
@@ -117,7 +120,7 @@
                             bool montoValido = extraer > 0m;
                             bool fondosSuficientes = saldo >= totalExtraer;
                             bool limiteOperacion = extraer <= limiteExtraccionOperacion;
-                            bool limiteDiario = totalExtraidoHoy <= limiteExtraccionDiario;
+                            bool limiteDiario = totalExtraidoHoy + extraer <= limiteExtraccionDiario;
                             // Las CUATRO condiciones a la vez
                             bool aprobada = montoValido && fondosSuficientes && limiteOperacion && limiteDiario;
 
@@ -127,7 +130,7 @@
                                 Console.WriteLine($"Estado: APROBADA");
 
                                 saldo -= totalExtraer;
-                                totalExtraidoHoy += totalExtraer;
+                                totalExtraidoHoy += extraer;
                                 totalComisiones += comisionFijaExtraccion;
 
                                 Console.WriteLine("Saldo actualizado: $ " + saldo.ToString("N2"));
@@ -135,22 +138,22 @@
                                 cantidadMovimientos++;
                                 ultimoMovimiento = DateTime.Now;
                             }
-                            else 
+                            else
                             {
                                 Console.WriteLine($"Estado: RECHAZADO");
+                                cantidadRechazos++;
                             }
                             Console.WriteLine();
 
                             break;
                         case 4:
                             bool identificadorAprobado = false;
-                            bool operacionPermitida = false;
                             decimal porcentajeComision = 0;
 
                             Console.WriteLine("--- 4. Transferir ---");
                             Console.Write("Tipo de identificador (CBU / CVU / ALIAS): ");
                             //Lectura del identificador y conversion a mayusculas
-                            string selectorIdentificador = Console.ReadLine();
+                            string? selectorIdentificador = Console.ReadLine();
 
                             //Switch para seleccionar el tipo de identificador
                             switch (selectorIdentificador)
@@ -171,86 +174,148 @@
                                     identificadorAprobado = true;
                                     break;
                                 default:
-                                    descripcionDestino = "Tipo de identificador no reconocido"; 
+                                    descripcionDestino = "Tipo de identificador no reconocido";
                                     break;
                             }
 
-                            //if (identificadorAprobado)
-                            //{
-                            //    Console.WriteLine("Destino: " + descripcionDestino);
-                            //    Console.Write("Monto a transferir: ");
-                            //    decimal transferir = decimal.TryParse(Console.ReadLine(), out decimal transferirLeido) ? transferirLeido : 0m;
+                            if (identificadorAprobado)
+                            {
+                                Console.WriteLine("Destino: " + descripcionDestino);
+                                Console.Write("Monto a transferir: ");
+                                decimal transferir = decimal.TryParse(Console.ReadLine(), out decimal transferirLeido) ? transferirLeido : 0m;
 
-                            //    //Condiciones para procesar el porcentaje de comision y si es o no permitida la operacion
-                            //    if (transferir <= 0)
-                            //    {
-                            //        operacionPermitida = false;
-                            //    }
-                            //    else if (transferir <= 500)
-                            //    {
-                            //        operacionPermitida = true;
-                            //        porcentajeComision = 1.5m;
-                            //    }
-                            //    else if (transferir <= 1000)
-                            //    {
+                                //Condiciones para procesar el porcentaje de comision y si es o no permitida la operacion
+                                if (transferir <= 0)
+                                {
+                                    transferir = 0;
+                                }
+                                if (transferir <= 500)
+                                {
+                                    porcentajeComision = 1.5m;
+                                }
+                                else if (transferir <= 1000)
+                                {
+                                    porcentajeComision = 1.2m;
+                                }
+                                else if (transferir <= limiteTransferenciaOperacion)
+                                {
+                                    porcentajeComision = 1m;
+                                }
+                                else
+                                {
+                                    transferir = 0;
+                                }
 
-                            //        operacionPermitida = true;
-                            //        porcentajeComision = 1.2m;
-                            //    }
-                            //    else if (transferir <= limiteTransferenciaOperacion)
-                            //    {
+                                decimal valorComision = transferir * porcentajeComision / 100;
+                                totalTransferir = transferir + valorComision;
 
-                            //        operacionPermitida = true;
-                            //        porcentajeComision = 1m;
-                            //    }
-                            //    else
-                            //    {
-                            //        tramo = "Supera el límite por operación";
-                            //    }
+                                montoValido = transferir > 0m;
+                                fondosSuficientes = saldo >= totalTransferir;
+                                limiteOperacion = totalTransferir <= limiteTransferenciaOperacion;
+                                bool valSms = false;
 
-                            //    //Imprime en consola dependiendo si es o no aprobado
-                            //    if (operacionPermitida)
-                            //    {
+                                if (totalTransferir > umbralValidacionSms)
+                                {
+                                    Console.Write("Código SMS: ");
+                                    if (Console.ReadLine() == codigoSmsCorrecto)
+                                    {
+                                        valSms = true;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Codigo SMS incorrecto");
+                                        valSms = false;
+                                    }
+                                }
+                                else
+                                {
+                                    valSms = true;
+                                }
 
-                            //        Console.WriteLine("Porcentaje de comisión: " + porcentajeComision.ToString("N1") + " %");
-                            //        decimal comision = transferir * porcentajeComision / 100;
-                            //        Console.WriteLine("Comisión: $" + comision.ToString("N2"));
-                            //        decimal totalTransferir = transferir + comision;
-                            //        Console.WriteLine("Total a descontar: $" + totalTransferir.ToString("N2"));
-                            //    }
-                            //    else
-                            //    {
+                                // Las cuatro condiciones a la vez
+                                aprobada = montoValido && fondosSuficientes && limiteOperacion && valSms;
 
-                            //        Console.WriteLine("La transferencia no puede calcularse");
-                            //    }
+                                if (aprobada)
+                                {
+                                    Console.WriteLine("Porcentaje de comisión: " + porcentajeComision.ToString("N1") + " %");
+                                    Console.Write("Comisión (" + porcentajeComision.ToString("N1") + "): $" + valorComision.ToString("N1"));
+                                    Console.WriteLine(" | Total: " + totalTransferir.ToString("N1"));
+                                    Console.WriteLine("Estado: APROBADO");
 
-                            //    Console.WriteLine();
+                                    saldo -= totalTransferir;
 
+                                    Console.WriteLine("Saldo actualizado: $" + saldo.ToString("N2"));
 
+                                    totalComisiones += valorComision;
+                                    cantidadMovimientos++;
+                                    ultimoMovimiento = DateTime.Now;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Estado: RECHAZADO");
+                                    cantidadRechazos++;
+                                }
+                            }
+                            else
+                            {
+                                //Imprime rechazado y el por que
+                                Console.WriteLine("Estado: RECHAZADO");
+                                Console.WriteLine(descripcionDestino);
+                                cantidadRechazos++;
+                            }
 
-
-                            //}
-                            //else 
-                            //{
-                            //    Console.WriteLine($"Estado: RECHAZADO");
-                            //}
-
-
-
-
-                            Console.WriteLine("4");
+                            Console.WriteLine();
                             break;
                         case 5:
-                            Console.WriteLine("5");
+                            Console.WriteLine("--- 5. Resumen de movimientos ---");
+                            Console.WriteLine("Titular: " + titular);
+
+                            //Tipo de usuario
+                            string tipoCliente = "";
+
+
+                            if (saldo <= 0) { }
+                            else if (saldo > 0 && saldo < 1000)
+                            {
+                                tipoCliente = "Clásico";
+
+                            }
+                            else if (saldo < 5000)
+                            {
+                                tipoCliente = "Plus";
+
+                            }
+                            else if (saldo > 5000)
+                            {
+                                tipoCliente = "Premium";
+                            }
+
+                            Console.WriteLine("Nivel de cliente: " + tipoCliente);
+                            Console.WriteLine("Saldo: $" + saldo.ToString("N2"));
+                            Console.WriteLine("Movimientos aprobados: " + cantidadMovimientos);
+                            Console.WriteLine("Operaciones rechazadas: " + cantidadRechazos);
+                            Console.WriteLine("Comisiones pagadas: $" + totalComisiones.ToString("N2"));
+                            Console.WriteLine("Extraido hoy: $" + totalExtraidoHoy.ToString("N2"));
+                            Console.WriteLine("Ultimo movimiento: " + (ultimoMovimiento.HasValue ? ultimoMovimiento.Value.ToString("dd/MM/yyyy") : "Sin movimientos"));
+
+                            Console.WriteLine();
                             break;
                         case 6:
-                            Console.WriteLine("6");
+                            Console.WriteLine("Gracias por utilizar la Billetera Virtual.");
+                            Console.WriteLine();
+                            Console.WriteLine("Fin de la sesión. Saldo final: $" + saldo.ToString("N2"));
                             break;
                         default:
-                            Console.WriteLine("Salir?");
+                            Console.WriteLine("Opción no válida. Ingrese un número del 1 al 6.");
+                            Console.WriteLine();
                             break;
                     }
                 }
+            }
+            else 
+            {
+                Console.WriteLine();
+                Console.WriteLine("Cuenta bloqueada");
             }
         }
     }
