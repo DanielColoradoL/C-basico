@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Ej01_CargasConfirmadas/Ej01_CargasConfirmadas.csproj" />
+  <Project Path="Ej02_PlanDeCuotas/Ej02_PlanDeCuotas.csproj" />
 </Solution>
