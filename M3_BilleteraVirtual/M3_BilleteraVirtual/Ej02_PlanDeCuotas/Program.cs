@@ -109,18 +109,15 @@
             }
             Console.WriteLine();
 
+            Console.WriteLine("---Simulador: cuota del mismo capital en otros plazos---");            
+            for (int i = 6; i <= 24; i += 6)
+            {
+                intereses = montoAux * i * tasaMensual / 100;
+                montoTotal = montoAux + intereses;
+                valorCuota = montoTotal / i;
 
-            //TODO
-            //for (int i = 6; i <= 24; i += 6)
-            //{
-
-            //}
-            //for (int plazo = 6; plazo <= 24; plazo += 6).
+                Console.WriteLine($"{i} cuotas de $ {valorCuota.ToString("N2")}");
+            }
         }
     }
 }
-
-
-//RF1. Declarar las constantes montoMinimo (1000.00), montoMaximo (50000.00),
-//cuotasMinimas (3), cuotasMaximas (24) y tasaMensual
-//(4.0, porcentaje de interés simple por mes), y la variable fechaSesion = new DateTime(2026, 10, 3).
