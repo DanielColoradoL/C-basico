@@ -2,4 +2,5 @@
   <Project Path="Ej01_CargasConfirmadas/Ej01_CargasConfirmadas.csproj" />
   <Project Path="Ej02_PlanDeCuotas/Ej02_PlanDeCuotas.csproj" />
   <Project Path="Ej03_LoteDeTransferencias/Ej03_LoteDeTransferencias.csproj" />
+  <Project Path="Ej04_AuditoriaDeMovimientos/Ej04_AuditoriaDeMovimientos.csproj" Id="b51b9793-672f-49f1-8ab9-38b436fc7357" />
 </Solution>
