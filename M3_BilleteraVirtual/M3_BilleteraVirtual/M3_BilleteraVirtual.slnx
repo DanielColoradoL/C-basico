@@ -6,4 +6,5 @@
   <Project Path="Ej05_ControlDeAcceso/Ej05_ControlDeAcceso.csproj" Id="61830d0b-c7b0-4cf3-9d80-e58220f96e79" />
   <Project Path="Ej06_AsistenteDeTransferencia/Ej06_AsistenteDeTransferencia.csproj" Id="abf7e32a-8b9e-408c-afa5-9918f38eab4b" />
   <Project Path="Ej07_RegistroDeMovimientos/Ej07_RegistroDeMovimientos.csproj" Id="d13e28ba-52e7-450b-8285-e87a6a294a15" />
+  <Project Path="Ej08_DepuracionDeCiclos/Ej08_DepuracionDeCiclos.csproj" Id="3da0f539-91c5-4eac-b117-74988c9accc5" />
 </Solution>
